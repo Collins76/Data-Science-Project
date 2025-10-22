@@ -1,4 +1,4 @@
-# Data-Science-Project
+# Data-Science-Project-on-Accident-Report
 The dataset contains information about accidents, including demographic data (Age, Gender), accident characteristics (Speed_of_Impact), safety measures used (Helmet_Used, Seatbelt_Used), and the outcome (Survived).
 
 # 1. Data Loading and Initial Overview
@@ -116,6 +116,9 @@ axes[1, 2].set_xlabel('Survived')
 plt.tight_layout(rect=[0, 0.03, 1, 0.95])
 plt.show()
 
+<img width="989" alt="Univariate Accident Analysis Dashboard" src="https://github.com/user-attachments/assets/a1adae0e-6a5d-4965-997b-dada9ad6402f" />
+
+
 These missing values will be excluded from analyses involving those specific columns or handled by imputation if necessary (though exclusion is simpler for this scope).
 
 # 3. Bivariate Analysis (Analyzing Relationships between Variables, focusing on Survival)
@@ -205,6 +208,9 @@ sns.boxplot(x='Seatbelt_Used', y='Speed_of_Impact', data=df_clean, order=['Yes',
 plt.title('Speed of Impact Distribution by Seatbelt Use')
 plt.show()
 
+<img width="790" alt="Bivariate Accident Analysis Dashboard" src="https://github.com/user-attachments/assets/595ae211-ae9e-4e2f-b374-49e62b862b56" />
+
+
 # 4. Deeper Dive: Seatbelt Use Anomaly
 
 Average Speed when Seatbelt Used: ~74.0
@@ -214,6 +220,9 @@ Average Speed when Seatbelt Not Used: ~70.5
 The boxplot confirms that crashes where seatbelts were used tended to occur at slightly higher speeds on average in this dataset compared to crashes where they weren't used.
 
 Hypothesis: The slightly lower survival rate observed for seatbelt users might be because they were involved in slightly more severe (higher speed) accidents, partially masking the protective effect of the seatbelt. The difference in survival rates is small anyway and could be due to chance or other unmeasured factors. In reality, seatbelts are proven life-savers; this dataset might be too small or have specific biases.
+
+<img width="562" alt="Speed of Impact by Seatbelt Use Dashboard" src="https://github.com/user-attachments/assets/47c1b45f-9cee-47dc-b75b-1e4d3e3ec4b7" />
+
 
 Key Insights & Summary
 Balanced Dataset: The dataset is well-balanced regarding Gender, Helmet Use, Seatbelt Use, and overall Survival outcome (approx. 50/50 splits).
